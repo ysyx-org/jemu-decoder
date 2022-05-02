@@ -1,0 +1,14 @@
+export default {
+	mask: '$MASK',
+	args: {
+		$ARGS
+	},
+	sext: true,
+	exec: {
+		$: '$EXEC'
+	},
+	meta: {
+		encoding: '$TYPE',
+		importance: NaN
+	}
+}

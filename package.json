@@ -1,0 +1,26 @@
+{
+  "name": "jemu-decoder",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "The decoder library for jemu execution and documentation",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "generate": "node ./scripts/generate.js; eslint . --fix"
+  },
+  "keywords": [
+    "emulator",
+    "Risc-V",
+    "cpu",
+    "core"
+  ],
+  "author": "Yuxuan Zhang",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "fs-extra": "^10.1.0",
+    "lib": "file:./lib"
+  }
+}
