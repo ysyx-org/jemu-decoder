@@ -1,0 +1,17 @@
+# Editor settings
+.vscode
+# NPM packages
+node_modules
+# Configurations
+config.js
+config.json
+# manifest.js
+# Package lock
+package-lock.json
+# Runtime generated data
+var
+tmp
+# to-do List
+TODO.md
+# Build results
+build
