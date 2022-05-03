@@ -19,6 +19,40 @@ or to auto-generate a wiki site.
 
 	Scripts used to generate and build the project
 
+
+## State transfer notations
+
+As you might already noticed, we use object notation to model the behavior of each instruction. Each key (aka. entry name) of the object represents a destination register, and the corresponding expression represents the state transfer rule for its next state (aka combinational logic).
+
+For example, we can describe the state transfer rule for `ADDI` (RV32I) as follows:
+
+```js
+// ADDI.js
+export default {
+	/* irrelevant items are hidden */
+	exec: {
+		rd: 'rs1 + imm'
+	}
+}
+```
+
+If you are familiar with verilog, the above code can be interpreted as:
+
+```verilog
+module addi(
+	input reg clk,
+	input reg [63:0] rs1, [31:0] imm,
+	output reg [63:0] rd
+)
+	always @(posedge clk) begin
+		rd <= rs1 + imm;
+	end
+endmodule
+```
+
+The way of state transfer notation is rooted in the nature of real hardwares: they are, by design, state transfer machines.
+
+The registers available in state transfer notation are architecture-dependent, hence it was externally defined in `jemu-core-$ARCH`
 ## Metadata
 
 + encoding `Char`
