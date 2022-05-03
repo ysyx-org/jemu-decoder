@@ -3,7 +3,6 @@ export default {
 	args: {
 		$ARGS
 	},
-	sext: true,
 	exec: {
 		$: '$EXEC'
 	},

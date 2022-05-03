@@ -31,6 +31,7 @@ function parseArgs(mask) {
 function formatArgs(args) {
 	return Object.entries(args).map(([key, val]) => {
 		if (/[[\].]/.test(key)) key = `'${key}'`
+		if (key === 'imm') val.unshift('S32')
 		return `${key}: ${JSON.stringify(val)}`
 	})
 }
@@ -43,6 +44,10 @@ function getType(mask, args) {
 	}
 	for (const t in LUT) {
 		const rx = new RegExp(LUT[t].replace(/\*/g, '[01]'))
+		const immSegLength = imm => {
+			if (!Array.isArray(imm)) return
+			return imm.filter(range => /^\d+(:\d+)*$/gi.test(range)).length
+		}
 		if (rx.test(mask)) {
 			switch (t) {
 				case 'X':
@@ -50,12 +55,12 @@ function getType(mask, args) {
 						1: 'I',
 						2: 'S',
 						4: 'B',
-					}[args.imm?.length] || '!'
+					}[immSegLength(args.imm)] || '!'
 				case 'Y':
 					return {
 						1: 'U',
 						4: 'J',
-					}[args.imm?.length] || '!'
+					}[immSegLength(args.imm)] || '!'
 				default:
 					return t
 			}
