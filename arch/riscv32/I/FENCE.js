@@ -4,7 +4,6 @@ export default {
 		p: ['27:24'],
 		s: ['23:20']
 	},
-	sext: true,
 	exec: {
 		$: '// Fence(pred, succ);'
 	},

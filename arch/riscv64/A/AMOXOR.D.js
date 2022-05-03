@@ -7,7 +7,6 @@ export default {
 		rs1: ['19:15'],
 		rd: ['11:7']
 	},
-	sext: true,
 	exec: {
 		$: '// rd = AMO64([rs1] ^ rs2)'
 	},

@@ -7,7 +7,6 @@ export default {
 		rm: ['14:12'],
 		rd: ['11:7']
 	},
-	sext: true,
 	exec: {
 		$: ''
 	},

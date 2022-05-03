@@ -5,7 +5,6 @@ export default {
 		rs1: ['19:15'],
 		rd: ['11:7']
 	},
-	sext: true,
 	exec: {
 		$: '// var(t) = CSRs[csr]; CSRs[csr]  = ~rs1  ; rd = t'
 	},

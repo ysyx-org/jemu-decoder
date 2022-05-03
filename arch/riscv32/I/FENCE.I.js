@@ -3,7 +3,6 @@ export default {
 	args: {
 
 	},
-	sext: true,
 	exec: {
 		$: '// Fence(pred, succ);'
 	},
