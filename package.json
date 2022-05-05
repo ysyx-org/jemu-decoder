@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node ./scripts/build.js",
+    "postbuild": "cd web && npm run generate",
     "generate": "node ./scripts/generate.js; eslint . --fix"
   },
   "keywords": [

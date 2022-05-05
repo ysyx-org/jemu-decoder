@@ -146,6 +146,7 @@ const config = {
 		'wrap-regex': [NEVER],
 		//  🔧	require or disallow spacing around the `*` in `yield*` expressions
 		'yield-star-spacing': [WARN],
+		'vue/no-multiple-template-root': [NEVER]
 	}
 }
 // Export the config

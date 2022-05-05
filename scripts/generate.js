@@ -16,13 +16,13 @@ function parseArgs(mask) {
 	const args = {}, rg = (str, start) => `${31 - start}:${31 - (start + str.length - 1)}`
 	// Immediate values
 	mask = mask
-		.replace(/=+/gi, (str, start) => {
-			args.imm = [...args.imm || [], rg(str, start)]
-			return ''.padEnd(str.length, '-')
-		})
 		.replace(/([A-Z][a-z0-9]*)-*/g, (str, n, start) => {
 			const name = n.toLowerCase()
 			args[name] = [...args[name] || [], rg(str, start)]
+			return ''.padEnd(str.length, '-')
+		})
+		.replace(/=+/g, (str, start) => {
+			args.imm = [...args.imm || [], rg(str, start)]
 			return ''.padEnd(str.length, '-')
 		})
 	return { mask, args }
@@ -78,16 +78,19 @@ Object.entries(list).forEach(([title, [mask, exec]]) => {
 	writeFileSync(
 		resolve(path, `${inst}.js`),
 		template
-			.replace('$MASK', parsed.mask)
-			.replace('$EXEC', exec)
-			.replace('$ARGS', formatArgs(parsed.args).join(',\n\t\t'))
-			.replace('$TYPE', getType(parsed.mask, parsed.args))
+			.replace(/\$MASK/g, parsed.mask)
+			.replace(/\$EXEC/g, exec)
+			.replace(/\$ARGS/g, formatArgs(parsed.args).join(',\n\t\t'))
+			.replace(/\$TYPE/g, getType(parsed.mask, parsed.args))
 	)
 	writeFileSync(
 		resolve(path, `${inst}.md`),
 		[
 			`<!-- Auto Generated For ${inst} (RV${bw}${cls}) -->`,
-			readFileSync(resolve(base, 'template.md.txt')).toString()
+			readFileSync(resolve(base, 'template.md.txt'))
+				.toString()
+				.replace(/\$INST/g, inst)
+				.replace(/\$TITLE/g, title.split('|')[0])
 		].join('\n\n')
 	)
 })

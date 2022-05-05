@@ -36,14 +36,10 @@ writeFileSync(
 			.map(([id, { args }]) => `'${id}': code => ({\n\t\t${
 				Object
 					.entries(args)
+					.sort((a, b) => a[0] > b[0])
 					.map(([name, range]) => `${/(^\d)|[.-]/gi.test(name) ? `'${name}'` : name}: ${new Parser(range).js}`)
 					.join(',\n\t\t')
 			}\n\t})`)
 			.join(',\n\t')
 	}\n}`.trim()
 )
-// Make docs
-let x = {
-	['hello'](a) { return a }
-}
-
