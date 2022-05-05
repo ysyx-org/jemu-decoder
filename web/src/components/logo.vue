@@ -1,6 +1,9 @@
 <script setup>
 const props = defineProps({
-	collapse: Boolean
+	collapse: {
+		type: Boolean,
+		default: true
+	}
 });
 </script>
 
@@ -22,13 +25,7 @@ const props = defineProps({
 				aria-placeholder="Js.Emu"
 			/>
 		</div>
-		<span subtitle v-if="!props.collapse"
-			><locale-name
-				:name="{
-					en: 'Unofficial RISC-V Manual',
-					zh: 'RISC-V 指令手册 (非官方)',
-				}"
-		/></span>
+		<span subtitle v-if="!props.collapse"><slot /></span>
 	</div>
 </template>
 

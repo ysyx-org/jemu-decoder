@@ -18,6 +18,7 @@ const
 	<div sidebar-wrapper>
 		<container sidebar-content flex-column flex-space-between :pad="false">
 			<container
+				sidebar-list-view
 				style="
 					width: 100%;
 					padding: 1em 0;
@@ -25,6 +26,15 @@ const
 					overflow-y: scroll;
 				"
 			>
+				<nav-group
+					title="HOME"
+					url="/"
+					@active="
+						() => {
+							if (props.toggle) emit('toggle-sidebar');
+						}
+					"
+				/>
 				<keep-alive>
 					<nav-group
 						v-for="(group, i) in index"
@@ -93,6 +103,10 @@ const
 		right: 0;
 		bottom: 0;
 		overflow: hidden;
+		:deep([sidebar-list-view] > [nav-group]) {
+			padding-top: 0.2em;
+			padding-bottom: 0.2em;
+		}
 	}
 	[collapse="true"][expand-sidebar="false"] & {
 		transform: translateX(calc(-2px - var(--sidebar-width)));

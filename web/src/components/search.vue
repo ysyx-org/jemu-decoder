@@ -182,7 +182,68 @@ function handleKey(e) {
 				</div>
 			</div>
 			<div search-prompt-hint v-if="searchResult.length == 0">
-				<div search-hint v-if="!searchString"></div>
+				<div
+					search-hint
+					style="text-align: left; padding-left: 1em"
+					v-if="!searchString"
+				>
+					<i
+						class="fa fa-info-circle"
+						style="margin-left: -1.6em; width: 1.6em"
+					></i
+					><locale-name
+						:name="{
+							en: 'Supported search terms:',
+							zh: '支持的搜索方式:',
+						}"
+					/>
+					<ul style="margin-left: 1em">
+						<li>
+							<locale-name
+								:name="{
+									en: 'Exact name match',
+									zh: '严格名称匹配',
+								}"
+							/>
+							<i example-arrow class="fa fa-arrow-right"></i>
+							<span example>"ADDI"</span>
+						</li>
+						<li>
+							<locale-name
+								:name="{
+									en: 'Blurry match',
+									zh: '模糊名称匹配',
+								}"
+							/>
+							<i example-arrow class="fa fa-arrow-right"></i>
+							<span example>"AMO ADD SUB"</span>
+						</li>
+						<li>
+							<locale-name
+								:name="{
+									en: 'Instruction Decode',
+									zh: '指令解码',
+								}"
+							/>
+							<i example-arrow class="fa fa-arrow-right"></i>
+							<span example>"00008293"</span>
+						</li>
+					</ul>
+					<span footnote>
+						<locale-name
+							:name="{
+								en: `
+									PS: If radix (0x, 0o, 0b) was not specified at the begin of code,
+									the decoder will try to interpret it as a hexadecimal number.
+								`,
+								zh: `
+									注: 如果输入的指令码没有在开头明确指定进制 (0x, 0o, 0b),
+									解码器会默认按照十六进制输尝试进行匹配.
+								`,
+							}"
+						/>
+					</span>
+				</div>
 				<div search-result-placeholder v-else>
 					<locale-name
 						:name="{
@@ -210,7 +271,7 @@ function codeMatch(code) {
 			url: `/${inst.toUpperCase()}?${code.toString(16)}`,
 			match: {
 				en: 'Matched by inst. code',
-				zh: '指令名编码匹配'
+				zh: '指令解码匹配'
 			}
 		}]
 	} else {
@@ -309,7 +370,7 @@ function parseHits(inst, lut) {
 		right: 0;
 		bottom: 0;
 		background-color: rgba(0, 0, 0, 0.6);
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(2px);
 	}
 	[search-prompt] {
 		position: fixed;
@@ -413,14 +474,31 @@ function parseHits(inst, lut) {
 						}
 					}
 				}
-				[search-result-placeholder] {
-					color: var(--ct-gray);
-					width: 100%;
-					padding: 2em 0;
-					font-weight: bold;
-					opacity: 0.8;
-					text-align: center;
-				}
+			}
+		}
+		[search-prompt-hint] {
+			color: var(--ct-gray);
+			width: 100%;
+			padding: 1em 2em;
+			opacity: 0.8;
+			text-align: center;
+			* {
+				margin-bottom: 0.8em;
+			}
+			[example-arrow] {
+				font-size: 0.8em;
+				margin: 0 0.8em;
+				opacity: 0.8;
+			}
+			[example] {
+				opacity: 0.8;
+				font-family: monospace, monospace;
+			}
+			[footnote] {
+				font-weight: bold;
+				font-size: 0.9em;
+				line-height: 1.6em;
+				color: var(--ct-gray-light);
 			}
 		}
 	}

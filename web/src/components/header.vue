@@ -37,7 +37,13 @@ watch(
 
 <template>
 	<div class="header">
-		<logo :collapse="props.collapse" />
+		<logo :collapse="props.collapse"
+			><locale-name
+				:name="{
+					en: 'Unofficial RISC-V Manual',
+					zh: 'RISC-V 指令手册 (非官方)',
+				}"
+		/></logo>
 		<div style="flex-grow: 1"></div>
 		<ColorSchemeSwitch style="margin-right: 8px" />
 		<search />
