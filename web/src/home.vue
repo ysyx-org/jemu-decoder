@@ -10,7 +10,7 @@ const
 	<container
 		flex-column
 		content-center
-		style="min-height: 100%; color: var(--ct-gray)"
+		style="min-height: 100%; color: var(--ct-gray);"
 		:pad="false"
 	>
 		<container
@@ -40,13 +40,13 @@ const
 						en: 'RISC-V ISA Manual',
 						zh: 'RISC-V 指令集手册',
 					}"
-				/><sup> *</sup>
+				/><sup>*</sup>
 			</h1>
 			<span style="color: var(--ct-gray-light)">
 				<locale-name
 					:name="{
 						en: `Press ${metaKey}-F to search instructions, or use the side bar to find an instruction.`,
-						zh: `按下 ${metaKey}-F 以搜索指令, 或在侧边栏中查找指令`,
+						zh: `按下 ${metaKey}-F 搜索指令, 或在侧边栏中查找指令`,
 					}"
 				/>
 			</span>
