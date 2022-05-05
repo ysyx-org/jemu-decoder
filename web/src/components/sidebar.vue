@@ -85,7 +85,8 @@ const
 	pointer-events: none;
 	opacity: 0;
 	background-color: #0008;
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
 	[expand-sidebar="true"] & {
 		pointer-events: all;
 		opacity: 1;

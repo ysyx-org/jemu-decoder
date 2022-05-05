@@ -270,8 +270,8 @@ function codeMatch(code) {
 			...searchIndex[inst],
 			url: `/${inst.toUpperCase()}?${code.toString(16)}`,
 			match: {
-				en: 'Matched by inst. code',
-				zh: '指令解码匹配'
+				en: 'Decode match',
+				zh: '解码匹配'
 			}
 		}]
 	} else {
@@ -313,8 +313,8 @@ function nameMatch(name) {
 			hits: parseHits(inst, hits),
 			url: `/${inst.toUpperCase()}`,
 			match: {
-				en: 'Matched by inst. name',
-				zh: '指令名称匹配'
+				en: 'Name match',
+				zh: '名称匹配'
 			},
 			exact
 		}))
@@ -370,7 +370,8 @@ function parseHits(inst, lut) {
 		right: 0;
 		bottom: 0;
 		background-color: rgba(0, 0, 0, 0.6);
-		backdrop-filter: blur(2px);
+		backdrop-filter: blur(3px);
+		-webkit-backdrop-filter: blur(3px);
 	}
 	[search-prompt] {
 		position: fixed;
@@ -440,19 +441,21 @@ function parseHits(inst, lut) {
 					cursor: pointer;
 					user-select: none;
 					[search-result-entry-content] {
-						display: block;
-						text-decoration: none;
-						color: inherit;
+						display: flex;
+						flex-direction: row;
 						padding: 0.6em 1em;
 						border-radius: 0.5em;
+						color: inherit;
+						text-decoration: none;
 						transition: none;
 						&.focus {
-							outline: 1px solid var(--cb-gray);
+							border: 1px solid var(--cb-gray);
 							background-color: var(--cf-next-level);
 							box-shadow: 0.2em 0.2em 0.6em 0 #0004;
 						}
 						[match-info] {
 							display: flex;
+							flex-grow: 1;
 							font-size: 1.2em;
 							[inst] {
 								display: inline-block;
@@ -471,6 +474,9 @@ function parseHits(inst, lut) {
 						[match-reason] {
 							color: var(--ct-gray-light);
 							font-style: italic;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
 						}
 					}
 				}

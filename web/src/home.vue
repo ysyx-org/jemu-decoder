@@ -30,7 +30,7 @@ const
 			<h1
 				style="
 					color: inherit;
-					padding: 10px;
+					padding: 20px 0;
 					margin-bottom: 15px;
 					border-bottom: 1px solid var(--cb-gray);
 				"
@@ -40,7 +40,7 @@ const
 						en: 'RISC-V ISA Manual',
 						zh: 'RISC-V 指令集手册',
 					}"
-				/><sup>*</sup>
+				/><sup> *</sup>
 			</h1>
 			<span style="color: var(--ct-gray-light)">
 				<locale-name
