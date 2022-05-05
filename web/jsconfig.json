@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@CC/*": ["./common/components/*"],
+			"@CS/*": ["./common/store/*"],
+			"@CR/*": ["./common/res/*"],
+			"@CL/*": ["./common/lib/*"],
+			"@C/*": ["./common/*"],
+			"@/*": ["./*"],
+		}
+	},
+	"exclude": ["node_modules", "dist"]
+}

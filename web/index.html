@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh" class="pre-load">
+
+<head>
+	<!-- Title will be replaced later by router -->
+	<title>JEMU RISC-V Utility</title>
+	<meta charset="UTF-8" />
+	<!-- Declare support for both dark and light scheme -->
+	<meta name="color-scheme" content="light dark">
+	<!-- ICON -->
+	<link rel="icon" href="/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/res/icon/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/res/icon/favicon-32x32.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/res/icon/apple-touch-icon.png">
+	<!-- Webmanifest -->
+	<link rel="manifest" href="/site.webmanifest">
+	<!-- Theme color -->
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1e23">
+	<!-- Viewport -->
+	<meta name="viewport" content="
+				viewport-fit=cover,
+				width=device-width,
+				initial-scale=1.0,
+				maximum-scale=1.0,
+				user-scalable=no" />
+</head>
+
+<body>
+	<div id="app"></div>
+	<script type="module" src="./index.js"></script>
+	<script>
+		// Mark html as ready after mount complete
+		setTimeout(() => {
+			window
+				.document
+				.querySelector("html")
+				.classList
+				.toggle('pre-load', false)
+		}, 1000);
+	</script>
+</body>
+
+</html>

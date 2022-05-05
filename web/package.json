@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "generate": "node scripts/generate",
+    "predev": "npm run generate",
+    "prebuild": "npm run generate",
+    "predeploy": "npm run generate",
+    "build": "vite build --outDir var/dist",
+    "deploy": "node common/deploy/index.mjs",
+    "preview": "vite preview",
+    "stat": "cloc --exclude-dir=node_modules,var --exclude-ext=svg,json ."
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^2.3.1",
+    "eslint": "^8.10.0",
+    "highlight.js": "^11.5.0",
+    "marked": "^4.0.13",
+    "sass": "^1.49.9",
+    "vite": "^2.8.0",
+    "vite-plugin-pwa": "^0.11.13",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.12"
+  },
+  "deploy": "jemu-decoder"
+}
