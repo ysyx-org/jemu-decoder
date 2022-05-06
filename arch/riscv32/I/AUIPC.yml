@@ -1,0 +1,12 @@
+mask: '-------------------------0010111'
+
+args:
+  rd: 11:7
+  s32'imm: 31:12
+
+exec:
+  rd: pc + imm
+
+meta:
+  encoding: '?'
+  importance: NaN

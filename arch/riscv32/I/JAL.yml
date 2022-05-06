@@ -1,0 +1,13 @@
+mask: '-------------------------1101111'
+
+args:
+  rd: 11:7
+  s32'imm: [31, 21:12, 22, 30:23]
+
+exec:
+  rd: pc + 4n
+  pc: pc + imm
+
+meta:
+  encoding: '?'
+  importance: NaN

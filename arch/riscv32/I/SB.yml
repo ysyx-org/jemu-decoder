@@ -1,0 +1,15 @@
+mask: '-----------------000-----0100011'
+
+args:
+  rs2: 24:20
+  rs1: 19:15
+  s32'imm: [8:11, 25:30, 7, 31]
+
+exec:
+  # 8 bits
+  $mask: '0xF'
+  $(rs1 + imm): 8'rs2 | ($(rs1 + imm) & ~$MASK)
+
+meta:
+  encoding: S
+  importance: NaN

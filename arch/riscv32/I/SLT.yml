@@ -1,0 +1,14 @@
+mask: '0000000----------010-----0110011'
+
+args:
+  rs2: 24:20
+  rs1: 19:15
+  rd: 11:7
+
+exec:
+  # B64 Converts a bit into 64bit BigInt
+  rd: B64(S(rs1) < S(rs2))
+
+meta:
+  encoding: R
+  importance: NaN

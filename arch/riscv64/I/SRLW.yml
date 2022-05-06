@@ -1,0 +1,13 @@
+mask: '0000000----------101-----0111011'
+
+args:
+  rs2: 24:20
+  rs1: 19:15
+  rd: 11:7
+
+exec:
+  rd: s32'(u32'rs1 >> (rs2 & 0b11111))
+
+meta:
+  encoding: R
+  importance: NaN

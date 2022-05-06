@@ -21,6 +21,8 @@
   "devDependencies": {
     "eslint": "^8.14.0",
     "fs-extra": "^10.1.0",
-    "lib": "file:./lib"
+    "lib": "file:./lib",
+    "lodash": "^4.17.21",
+    "yaml": "^2.0.1"
   }
 }
