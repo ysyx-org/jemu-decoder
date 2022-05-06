@@ -16,7 +16,7 @@ Please take a look at [contribution guide](docs/contribute.md) to get started.
 
 + `/arch`
 
-	The core directory containing the definitions of all instructions. See [instruction meta format]() and [instruction doc format]().
+	The core directory containing the definitions of all instructions. See [instruction definition](docs/define.md) and [instruction documentation format](docs/doc-instruction.md).
 
 + `/lib`
 
