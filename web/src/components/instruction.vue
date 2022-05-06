@@ -171,7 +171,7 @@ router.beforeEach(() => code.value = parseInstCode())
 					<i class="fab fa-github"></i>
 				</a>
 				<btn
-					:href="`${gitBase}/blob/master/${props.meta.fsPath}.js`"
+					:href="`${gitBase}/blob/master/${props.meta.fsPath}.yml`"
 					target="_blank"
 					type="solid gray-brand"
 				>

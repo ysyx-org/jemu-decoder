@@ -448,6 +448,7 @@ function parseHits(inst, lut) {
 						color: inherit;
 						text-decoration: none;
 						transition: none;
+						border: 1px solid transparent;
 						&.focus {
 							border: 1px solid var(--cb-gray);
 							background-color: var(--cf-next-level);
@@ -473,7 +474,6 @@ function parseHits(inst, lut) {
 						}
 						[match-reason] {
 							color: var(--ct-gray-light);
-							font-style: italic;
 							overflow: hidden;
 							text-overflow: ellipsis;
 							white-space: nowrap;
