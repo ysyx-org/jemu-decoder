@@ -145,7 +145,7 @@ router.beforeEach(() => code.value = parseInstCode())
 					zh: '行为描述',
 				}"
 		/></span>
-		<container style="flex-grow: 1" :pad="false" markdown-body
+		<container style="flex-grow: 1; line-height: 180%;" :pad="false" markdown-body
 			><slot
 		/></container>
 		<span section-title>
