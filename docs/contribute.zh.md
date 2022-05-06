@@ -1,4 +1,4 @@
-# How to contribute
+# 如何贡献代码
 
 [English](./contribute.md) | 中文
 
