@@ -1,6 +1,6 @@
 ## 为指令创建描述文档
 
-[English](./contribute.md) | 中文
+[English](./doc-instruction.zh.md) | 中文
 
 > ### 暂未完成编辑
 > 
