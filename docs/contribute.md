@@ -1,13 +1,11 @@
 # How to contribute
 
-<!-- > Available languages:
-[English](./contribute.md) |
-[中文](./contribute.zh.md) -->
+English | [中文](./contribute.zh.md)
 
 **Thank you for looking into contribute guide!**
 
 If you want to help build the content,
-`/arch/riscv*` is the place to go.
+`arch/riscv*` is the place to go.
 
 Before start writing your first pull request,
 you may want to get familiar with:

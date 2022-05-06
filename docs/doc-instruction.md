@@ -1,8 +1,10 @@
 ## Documenting an instruction
 
-<!-- > Available languages:
-[English](./contribute.md) |
-[中文](./contribute.zh.md) -->
+English | [中文](./doc-instruction.zh.md)
 
-> To be edited, for quick reference, please see
-> `/arch/riscv32/I/addi.md` and `/arch/riscv32/I/AUIPC.md`
+> ### To be edited
+> 
+> You may use
+> [`ADDI.md`](../arch/riscv32/I/addi.md)
+> or [`AUIPC.md`](../arch/riscv32/I/AUIPC.md)
+> as template.
