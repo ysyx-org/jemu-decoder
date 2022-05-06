@@ -10,7 +10,7 @@ const
 	<container
 		flex-column
 		content-center
-		style="min-height: 100%; color: var(--ct-gray);"
+		style="min-height: 100%; color: var(--ct-gray)"
 		:pad="false"
 	>
 		<container
@@ -103,7 +103,7 @@ const
 					padding: 0.5em;
 					text-decoration: none;
 				"
-				href="https://github.com/ysyx-org/jemu-decoder"
+				href="https://github.com/ysyx-org/jemu-decoder/blob/master/docs/contribute.md"
 				target="_blank"
 			>
 				<i

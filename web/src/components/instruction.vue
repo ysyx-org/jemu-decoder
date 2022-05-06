@@ -44,21 +44,18 @@ router.beforeEach(() => code.value = parseInstCode())
 			<span style="color: var(--ct-gray); margin: 0.5rem 0">{{
 				props.meta.type
 			}}</span>
-			<span
-				style="
-					color: var(--ct-gray);
-					margin: 0.5rem 0;
-					padding: 0 0.3em;
-				"
-				>&gt;</span
-			>
-			<span style="font-weight: bold">{{ props.inst }}</span>
-			<span style="flex-grow: 1"></span>
-			<badge style="font-size: 1rem; height: 1.6em; line-height: 100%; margin: 0">
-				<span style="font-weight: lighter">encoding&nbsp;</span>
+			<badge style="margin: 0 0 0 0.4em">
 				<b>{{ props.meta.encoding }}</b>
 			</badge>
+			<span style="color: var(--ct-gray); margin: 0.4em">&gt;</span>
+			<span style="font-weight: bold">{{ props.inst }}</span>
 		</container>
+		<span
+			v-if="props.meta.title"
+			style="font-size: 1.2em; color: var(--ct-gray-dark)"
+		>
+			<locale-name :name="props.meta.title" />
+		</span>
 		<container
 			type="warn"
 			v-if="!isNaN(code) && !agree"
@@ -217,13 +214,15 @@ router.beforeEach(() => code.value = parseInstCode())
 [section-title] {
 	width: 100%;
 	font-weight: bold;
-	color: var(--ct-gray-light);
+	color: var(--ct-gray);
 	padding: 0.5em 0;
-	margin: 0.5em 0;
+	margin: 1em 0 0.5em 0;
 	border-top: 1px solid var(--cb-gray-light);
 	select {
-		border: none;
-		outline: 1px solid var(--cb-gray);
+		border: 1px solid var(--cb-gray-light);
+		background-color: var(--cf-gray-light);
+		border-radius: 0.4em;
+		overflow: hidden;
 		font-family: monospace, monospace;
 		color: var(--ct-gray);
 		padding: 0.2em 0.5em;

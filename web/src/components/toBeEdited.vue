@@ -31,7 +31,8 @@ const
 		</p>
 		<container flex-row flex-wrap :pad="false">
 			<btn
-				href="https://github.com/ysyx-org/jemu-decoder#jemu-decoder-library"
+				href="https://github.com/ysyx-org/jemu-decoder#readme"
+				target="_blank"
 				type="solid gray-brand"
 				style="margin-left: 0"
 			>
@@ -44,7 +45,8 @@ const
 				/>
 			</btn>
 			<btn
-				href="https://github.com/ysyx-org/jemu-decoder#jemu-decoder-library"
+				href="https://github.com/ysyx-org/jemu-decoder/blob/master/docs/contribute.md"
+				target="_blank"
 				type="solid gray-brand"
 				style="margin-left: 0"
 			>

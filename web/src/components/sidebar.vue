@@ -52,8 +52,8 @@ const
 			</container>
 			<div
 				style="
-					height: 3rem;
-					min-height: 3rem;
+					height: 4rem;
+					min-height: 4rem;
 					width: 100%;
 					background-color: var(--cf);
 					border-top: 1px solid var(--cb-gray-light);
