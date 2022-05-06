@@ -13,8 +13,8 @@ Before start writing your first pull request,
 you may want to get familiar with:
 
 1. Project Structure - available in [README](../README.md)
-1. Instruction Definition - details [here](../define.md)
-1. Instruction Doc Format - details [here](../doc-instruction.md)
+1. Instruction Definition - details [here](./define.md)
+1. Instruction Doc Format - details [here](./doc-instruction.md)
 
 At this moment, we only have plan to support RISC-V ISA.
 Therefore, all pull requests can be directly targeted to branch `master`.
