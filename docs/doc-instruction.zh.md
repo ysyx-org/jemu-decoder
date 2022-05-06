@@ -5,6 +5,6 @@
 > ### 暂未完成编辑
 > 
 > 可以先参考
-> [`ADDI.md`](../arch/riscv32/I/addi.md)
+> [`ADDI.md`](../arch/riscv32/I/ADDI.md)
 > 或者 [`AUIPC.md`](../arch/riscv32/I/AUIPC.md)
 > 的格式编写内容
