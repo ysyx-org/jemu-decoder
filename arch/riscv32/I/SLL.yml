@@ -6,8 +6,8 @@ args:
   rd: 11:7
 
 exec:
-  rd: rs1 << (rs2 & 0b111111)
+  rd: rs1 << (rs2 & 0b11111)
 
 meta:
   encoding: R
-  importance: NaN
+  importance: 0
