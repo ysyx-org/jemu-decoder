@@ -145,9 +145,31 @@ router.beforeEach(() => code.value = parseInstCode())
 					zh: '行为描述',
 				}"
 		/></span>
-		<container style="flex-grow: 1; line-height: 180%;" :pad="false" markdown-body
+		<container
+			style="flex-grow: 1; line-height: 180%"
+			:pad="false"
+			markdown-body
 			><slot
 		/></container>
+		<span section-title v-if="props.meta.related"
+			><locale-name
+				:name="{
+					en: 'Related Instructions',
+					zh: '相关指令',
+				}"
+		/></span>
+		<container flex-row flex-wrap :pad="false" v-if="props.meta.related">
+			<badge
+				v-for="(inst, i) in props.meta.related"
+				:key="i"
+				type="solid gray"
+				style="font-family: monospace, monospace; padding: 0.5em; margin-left: 0;"
+			>
+				<router-link :to="inst" style="color: inherit">{{
+					inst
+				}}</router-link>
+			</badge>
+		</container>
 		<span section-title>
 			<container
 				flex-row
