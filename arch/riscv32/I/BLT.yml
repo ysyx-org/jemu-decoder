@@ -6,7 +6,7 @@ args:
   s32'imm: [8:11, 25:30, 7, 31]
 
 exec:
-  pc: s64'rs1 < s64'rs2 ? pc + imm, pc + 1
+  pc: s64'rs1 < s64'rs2 ? pc + imm, pc + 4
 
 meta:
   encoding: S

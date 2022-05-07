@@ -6,7 +6,7 @@ args:
   s32'imm: [8:11, 25:30, 7, 31]
 
 exec:
-  pc: rs1 >= rs2 ? pc + imm, pc + 1
+  pc: rs1 >= rs2 ? pc + imm, pc + 4
 
 meta:
   encoding: S

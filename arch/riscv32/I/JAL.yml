@@ -5,7 +5,7 @@ args:
   s32'imm: [31, 21:12, 22, 30:23]
 
 exec:
-  rd: pc + 4n
+  rd: pc + 4
   pc: pc + imm
 
 meta:
