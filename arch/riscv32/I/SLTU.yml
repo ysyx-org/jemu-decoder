@@ -6,8 +6,8 @@ args:
   rd: 11:7
 
 exec:
-  rd: rs1 < rs2
+  rd: u'rs1 < u'rs2
 
 meta:
   encoding: R
-  importance: NaN
+  importance: 0
