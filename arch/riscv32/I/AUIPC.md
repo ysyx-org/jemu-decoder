@@ -1,3 +1,4 @@
+@related LUI JAL
 @locale en
 @title Add U-Immediate with PC
 

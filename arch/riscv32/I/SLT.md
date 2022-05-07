@@ -1,3 +1,4 @@
+@related SLTU
 @locale en
 @title (SIGNED) Set if Less Than
 
