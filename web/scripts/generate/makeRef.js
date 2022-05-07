@@ -6,7 +6,6 @@ function renderInstruction(content) {
 		[
 			'font-family: monospace, monospace',
 			'font-weight: bold',
-			'margin: 0 0.5em',
 			'color: var(--c-brand)',
 		].join(';'),
 		'">',
