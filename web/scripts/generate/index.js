@@ -3,12 +3,13 @@ import { dirname, resolve } from 'path'
 import { ensureDirSync } from 'fs-extra'
 import { readFileSync, writeFileSync } from 'fs'
 import { marked } from 'marked'
+import makeRef from './makeRef.js'
 // Path to store auto-generated files
 const VAR_PATH = resolve(WEB_ROOT, 'var'), PWD = dirname(import.meta.url.replace(/^file:/gi, ''))
 // Ensure the existence of the directory
 ensureDirSync(VAR_PATH)
 // Load decoder build results
-const raw = JSON.parse(readFileSync(resolve(BUILD_PATH, 'raw.json')))
+export const raw = JSON.parse(readFileSync(resolve(BUILD_PATH, 'raw.json')))
 // Generate router index
 writeFileSync(
 	resolve(VAR_PATH, 'router.index.js'),
@@ -57,11 +58,11 @@ writeFileSync(
 						{}
 					)
 			)
-			.sort(([a], [b]) => a < b)
-			.map(([type, items]) => ({
-				title: type,
-				items: items.sort((a, b) => a.title < b.title)
-			})),
+				.sort(([a], [b]) => a < b)
+				.map(([type, items]) => ({
+					title: type,
+					items: items.sort((a, b) => a.title < b.title)
+				})),
 			null,
 			'\t'
 		)
@@ -87,7 +88,7 @@ for (const inst in raw) {
 					marked
 						.parse(doc[locale])
 						.split('\n')
-						.map(str => str.trim())
+						.map(str => makeRef(str.trim()))
 						.filter(str => !!str)
 						.join('\n\t\t\t')
 				)
