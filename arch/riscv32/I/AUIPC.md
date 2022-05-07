@@ -1,21 +1,39 @@
 @locale en
-@title Add Upper Immediate to PC
+@title Add U-Immediate with PC
 
 `AUIPC` is used to build `PC`-relative addresses and uses the U-type format. 
-`AUIPC` forms a 32-bit offset from the U-immediate,
+`AUIPC` forms a 32-bit offset from the `U-immediate`,
 filling in the lowest 12 bits with zeros,
 adds this offset to the address of the `AUIPC` instruction,
 then places the result in `rd`.
 
 @locale zh
-@title PC加左移立即数
+@title U型立即数加PC
 
 `AUIPC` 用于获取相对于 `PC` 的地址, 指令使用 U 编码.
-通过将指令中编码的 20 位立即数左移并在低位补 0, `AUIPC` 可以构造一个 32 位整型的地址偏移范围.
 
-将这个偏移量与当前 `PC` 中的地址相加, 结果保存至`rd`.
+通过将指令中编码的 20 位 `U型立即数` 左移 12 位并在低位补 0, `AUIPC` 可以构造一个 32 位整型的地址偏移范围.
+
+`AUIPC` 将这个偏移量与当前 `PC` 中的地址相加, 结果保存至`rd`.
 
 @locale *
+<container type="warn">
+
+@locale en
+<i class="fas fa-bell"></i> <b>Notice</b>
+
+`AUIPC` will **NOT** change `PC`.
+Control flow will never be interrupted by this instruction.
+
+@locale zh
+<i class="fas fa-bell"></i> <b>注意</b>
+
+`AUIPC` **不会**更改 `PC`.
+这条指令永远不会让控制流产生分支.
+
+@locale *
+</container>
+
 <container type="info">
 
 @locale en
@@ -34,9 +52,11 @@ it might cause pipeline breaks in simpler micro-architectures or pollute BTB str
 @locale zh
 <i class="fa fa-info-circle"></i> <b>提示</b>
 
-汇编代码的 `LUI` 和 `AUIPC` 调用中, 字面立即数并不会反映立即数的低12位, 因为它们永远是0.
+在汇编代码中, `LUI` 和 `AUIPC` 指令的 `字面立即数` 并不会反映 `用于实际计算的立即数` 的低 12 位, 因为它们永远是 0.
 
-`AUIPC` 指令可以在另一条指令的配合下实现相对于当前 `PC` 的 32 位整型偏移范围内的任意跳转 (或访存). 例如:
+`AUIPC` 指令可以在另一条指令的配合下实现 32 位整型偏移范围内的任意跳转或访存
+(相对于 `AUIPC` 指令所在的 `PC`).
+例如:
 	
 + `AUIPC` 与 `JALR` 的 12 位立即数配合, 可以将控制流跳转到相对于 `PC` 的、32 位整型范围内的任意地址;
 
