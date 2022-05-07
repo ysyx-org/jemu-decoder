@@ -19,6 +19,8 @@ function log(...arg) { console.log(...arg) }
 // Watch for search string update
 watch(searchString, str => {
 	const result = []
+	// Reset focus to the start of result list
+	focus.value = 0
 	// Directly return empty array if searchString is empty
 	if (!str || typeof str !== 'string') return searchResult.value = []
 	// Check if searchString is formatted as a 'solid' number
@@ -79,9 +81,6 @@ function handleKey(e) {
 	} else if (/^ArrowUp$/i.test(key)) {
 		e.preventDefault()
 		focus.value = normalize(focus.value - 1)
-	} else {
-		// Treat as normal input
-		focus.value = 0
 	}
 }
 </script>
