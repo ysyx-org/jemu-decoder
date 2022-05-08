@@ -3,7 +3,7 @@ import instList from '@/var/router.index'
 import { match as matchLocale } from '@CC/locale/LocaleName.vue'
 import { locale } from '@CL/locale'
 // Compose the router
-const TITLE = 'JEMU RISC-V Utility'
+const TITLE = 'RISC-V Manual'
 /**
  * @type {import('vue-router').RouteRecordRaw[]}
  */
