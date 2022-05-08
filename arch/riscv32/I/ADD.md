@@ -1,3 +1,4 @@
+@related ADDI SUB
 @locale en
 @title Add two registers
 

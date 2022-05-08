@@ -1,3 +1,4 @@
+@related ADD
 @locale en
 @title Subtract two registers
 
