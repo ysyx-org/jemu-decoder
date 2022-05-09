@@ -1,6 +1,5 @@
 <script setup>
-import { parserOptions } from "@vue/compiler-dom";
-import { computed } from "@vue/runtime-core";
+import { computed } from "vue";
 import argColor from "./argColor";
 
 const
