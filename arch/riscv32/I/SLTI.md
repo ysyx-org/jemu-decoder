@@ -1,10 +1,11 @@
-@related SLTI
+@related SLT SLTIU
 @locale en
-@title set less than immediate
+@title (SIGNED) set less than immediate
 
-SLTI places the value 1 in register `rd` if register `rs1` is less than the sign-extended immediate when both are treated as signed numbers, else 0 is written to `rd`
+SLTI performs **signed compare** between `rs1` and immediate, writing 1 to 'rd' if 'rs1' < immediate, 0 otherwise.
 
 @locale zh
-@title 当小于立即数时置位(set less than immediate)
+@title (有符号) 小于立即数则置位
 
-SLTI 在寄存器 `rs1` 中的值小于符号拓展后的立即数的值时，将 `rd` 寄存器的值置位1，否则将 `rd` 寄存器的值置为0。
+SLTI 对 `rs1` 和 `立即数` 进行**有符号**比较,
+如果 `rs1` < `立即数` 则将 `rd` 置 1, 否则置 0.
