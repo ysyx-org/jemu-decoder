@@ -1,5 +1,8 @@
 import make from 'lib/makeTarget.js'
 export default {
+	// general
+	...await make('riscv/Zifencei', { type: 'RV-Zifencei' }),
+	...await make('riscv/Zicsr', { type: 'RV-Zicsr' }),
 	// riscv32
 	...await make('riscv32/A', { type: 'RV32A' }),
 	...await make('riscv32/D', { type: 'RV32D' }),
