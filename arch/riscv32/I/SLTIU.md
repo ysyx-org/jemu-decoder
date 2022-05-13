@@ -2,7 +2,7 @@
 @locale en
 @title (UNSIGNED) set less than immediate
 
-SLTI performs **unsigned compare** between `rs1` and 32-bits sign-extended 12-bits immediate, writing 1 to 'rd' if 'rs1' < immediate, 0 otherwise.
+SLTI performs **unsigned compare** between `rs1` and 32-bits sign-extended 12-bits immediate, writing 1 to `rd` if `rs1` < immediate, 0 otherwise.
 
 @locale zh
 @title (无符号) 小于立即数则置位
@@ -26,6 +26,6 @@ assembler pseudo-instruction `SNEZ` `rd, rs`.
 `SLTIU` `rd, rs1, 1` 可以用于判断 `rs1` 的值是否为零. 若 `rs1` 为零则 `rd` 置 1, 否则置零
 
 用于实现汇编器虚拟指令 `SEQZ` `rd, rs`
-  
-  @locale *
+
+@locale *
 </container>
