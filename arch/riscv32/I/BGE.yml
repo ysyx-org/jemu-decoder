@@ -1,12 +1,12 @@
 mask: '-----------------101-----1100011'
 
 args:
-  s64'rs2: 24:20
-  s64'rs1: 19:15
-  s32'imm: [8:11, 25:30, 7, 31]
+  rs2: 24:20
+  rs1: 19:15
+  imm: [8:11, 25:30, 7, 31]
 
 exec:
-  pc: rs1 >= rs2 ? pc + imm, pc + 4
+  pc: "s'rs1 >= s'rs2 ? pc + imm : pc + 4"
 
 meta:
   encoding: S
