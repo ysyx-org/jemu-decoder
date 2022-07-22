@@ -7,8 +7,7 @@ args:
 
 exec:
   # 8 bits
-  $mask: '0xF'
-  $(rs1 + imm): 8'rs2 | ($(rs1 + imm) & ~$MASK)
+  M(rs1 + imm)[7:0]: "rs2[7:0]"
 
 meta:
   encoding: S

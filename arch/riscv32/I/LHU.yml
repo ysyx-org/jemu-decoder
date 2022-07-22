@@ -6,7 +6,7 @@ args:
   s32'imm: 31:20
 
 exec:
-  rd: $(rs1 + imm) & 0xFF
+  rd: "M(rs1 + imm)[15:0]"
 
 meta:
   encoding: I
