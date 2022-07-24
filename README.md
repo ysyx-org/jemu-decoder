@@ -34,8 +34,9 @@ Please take a look at [contribution guide](docs/contribute.md) to get started.
 + `/web`
 
 	A magical sub-project converting the project into a handy manual website.
-	The decoder and parser we built in the parent project will be imbedded into
-	its runtime core, enabling search and decode of binary instruction codes.
+	The decoder and parser we built in the parent
+	project will be embedded into its runtime core,
+	enabling search and decode of binary instructions.
 
 
 ## Build for web
@@ -47,6 +48,10 @@ Please take a look at [contribution guide](docs/contribute.md) to get started.
 	jemu-decoder > npm run build
 	```
 
+	If you made any change to the content of `/arch`
+	and want to get it reflected in the webpages,
+	you have to run this command.
+
 1. Preview webpages
 
 	```sh
@@ -54,7 +59,13 @@ Please take a look at [contribution guide](docs/contribute.md) to get started.
 	jemu-decoder/web > npm run dev
 	```
 
-1. Build and deploy ([ysyx](ysyx.oscc.cc) stuff with certain privileges only)
+	This command will launch a local server showing live
+	updates of the web contents.
+	`vite` is used under the hood.
+
+	While a `dev` is running, you can modify the code under `/arch`, and manually [build the decoder](#build-the-decoder) to see live updates.
+
+1. Build and deploy (only available for [ysyx](ysyx.oscc.cc) stuff with certain privileges)
 
 	To build for web only (without deploying)
 	
@@ -69,4 +80,3 @@ Please take a look at [contribution guide](docs/contribute.md) to get started.
 	# Run at web folder
 	jemu-decoder/web > npm run deploy
 	```
-	
