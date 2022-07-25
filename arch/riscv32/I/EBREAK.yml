@@ -6,5 +6,5 @@ exec:
   RaiseException(BREAKPOINT): 
 
 meta:
-  encoding: '?'
+  encoding: I
   importance: NaN

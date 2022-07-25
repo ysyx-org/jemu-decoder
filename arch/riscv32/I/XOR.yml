@@ -6,7 +6,7 @@ args:
   rd: 11:7
 
 exec:
-  rd: rs1 ^ rs2
+  rd: "rs1 ^ rs2"
 
 meta:
   encoding: R

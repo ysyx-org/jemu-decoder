@@ -3,11 +3,11 @@ mask: '-----------------000-----1100111'
 args:
   rs1: 19:15
   rd: 11:7
-  s32'imm: 31:20
+  imm: 31:20
 
 exec:
-  pc: (rs1 + imm) & ~1
-  rd: pc + 4
+  pc: "(rs1 + imm) & ~1"
+  rd: "pc + 4"
 
 meta:
   encoding: I

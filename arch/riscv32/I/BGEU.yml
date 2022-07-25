@@ -9,5 +9,5 @@ exec:
   pc: "u'rs1 >= u'rs2 ? pc + imm : pc + 4"
 
 meta:
-  encoding: S
+  encoding: B
   importance: NaN

@@ -2,11 +2,11 @@ mask: '-------------------------0110111'
 
 args:
   rd: 11:7
-  s32'imm: 31:12
+  imm: 31:12
 
 exec:
-  rd: imm << 12
+  rd: imm
 
 meta:
-  encoding: '?'
+  encoding: U
   importance: NaN

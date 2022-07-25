@@ -2,12 +2,12 @@ mask: '-------------------------0010111'
 
 args:
   rd: 11:7
-  s32'imm: 31:12
+  imm: 31:12
   # Planned to support:
   # s32'imm: [31:12, $000000000000]
 
 exec:
-  rd: pc + imm << 12
+  rd: pc + imm
 
 meta:
   encoding: U
