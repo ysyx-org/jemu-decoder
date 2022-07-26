@@ -6,7 +6,7 @@ args:
   rd: 11:7
 
 exec:
-  rd: u'rs1 < u'rs2
+  rd: "u'rs1 < u'rs2 ? 1 : 0"
 
 meta:
   encoding: R

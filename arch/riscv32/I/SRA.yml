@@ -6,7 +6,7 @@ args:
   rd: 11:7
 
 exec:
-  rd: s'rs1 >> (rs2 & 0b11111)
+  rd: "s'rs1 >> rs2[4:0]"
 
 meta:
   encoding: R

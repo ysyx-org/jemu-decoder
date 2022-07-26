@@ -6,5 +6,5 @@ exec:
   RaiseException(ENVIRONMENTCALL): 
 
 meta:
-  encoding: '?'
+  encoding: I
   importance: NaN

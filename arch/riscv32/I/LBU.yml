@@ -3,10 +3,10 @@ mask: '-----------------100-----0000011'
 args:
   rs1: 19:15
   rd: 11:7
-  s32'imm: 31:20
+  imm: 31:20
 
 exec:
-  rd: $(rs1 + imm) & 0xF
+  rd: "M(rs1 + imm)[7:0]"
 
 meta:
   encoding: I

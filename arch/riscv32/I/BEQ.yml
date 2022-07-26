@@ -3,11 +3,11 @@ mask: '-----------------000-----1100011'
 args:
   rs2: 24:20
   rs1: 19:15
-  s32'imm: [8:11, 25:30, 7, 31]
+  imm: [8:11, 25:30, 7, 31]
 
 exec:
-  pc: rs1 == rs2 ? pc + imm,  pc + 4
+  pc: "rs1 == rs2 ? pc + imm : pc + 4"
 
 meta:
-  encoding: S
+  encoding: B
   importance: NaN
