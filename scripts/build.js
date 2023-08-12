@@ -28,18 +28,19 @@ writeFileSync(
 	).js
 )
 // Create parser library
+function generateParserBin([op, { args }]) {
+	const segments = Object.entries(args).sort((a, b) => a[0] > b[0])
+	const scripts = segments.map(
+		([param, range]) => `'${param}': ${new Parser(range, op, param).js}`)
+	return `'${op}': code => ({\n\t\t${scripts.join(',\n\t\t')}\n\t})`
+}
+
+const parserScript = Object
+	.entries(raw)
+	.map(generateParserBin)
+	.join(',\n\t')
+
 writeFileSync(
 	resolve(buildPath, 'parser.js'),
-	`export default {\n\t${
-		Object
-			.entries(raw)
-			.map(([id, { args }]) => `'${id}': code => ({\n\t\t${
-				Object
-					.entries(args)
-					.sort((a, b) => a[0] > b[0])
-					.map(([name, range]) => `${/(^\d)|[.-]/gi.test(name) ? `'${name}'` : name}: ${new Parser(range).js}`)
-					.join(',\n\t\t')
-			}\n\t})`)
-			.join(',\n\t')
-	}\n}`.trim()
+	`export default {\n\t${parserScript}\n}`.trim()
 )
