@@ -1,3 +1,9 @@
-<!-- Auto Generated For SW (RV32I) -->
+@locale en
+@title Store word
 
-<to-be-edited />
+`SW` instruction transfers a word of data from a register to memory.
+
+@locale zh
+@title 存字
+
+`SW` 从寄存器取字到储存器.
